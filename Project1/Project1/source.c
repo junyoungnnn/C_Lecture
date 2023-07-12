@@ -15,7 +15,7 @@ void main()
 
 	// 정수형 (int)
 	int data = 100;
-
+	//수정
 
 
 }
