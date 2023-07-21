@@ -1,82 +1,71 @@
 #include <stdio.h>
 
-void main()
+int main()
 {
-#pragma region 자료형 변환
-	// 서로 다른 자료형을 가지고 있는 변수끼리
-	// 연산이 이루어질 때 기존에 지정했던
-	// 자료형을 다른 자료형으로 변환하는 과정입니다.
+#pragma region 주소 연산자
+	// 변수의 주소 값을 반환하는 연산자입니다.
 
-	// 암묵적 형 변환
-	/*
-	// 서로 다른 자료형으로 연산이 이루어질 때 자료형의
-	// 그기가 큰 자료형으로 변환되는 과정입니다.
+	int data = 100;
 
-	int integer = 10;
-	float decimal = 6.5f;
+	// 메모리 주소는 프로그램이 실행될때마다
+	// 계속 변경됩니다.
+	// printf("data의 주소: %p\n", &data);
 
-	// // sizeof() : 자료형의 크기를 반환하는 연산자입니다.
-	// printf("int의 자료형 크기 %d\n", sizeof(int));
-	// printf("float의 자료형 크기 %d\n", sizeof(decimal));
-	// 
-	// // 정수의 승격
-	// // char + short -> 4byte
-	// 
-	// printf("integer + decimal = %f\n", integer + decimal);
-
-	// 표현범위가 작은 데이터에 표현범위가 큰 데이터를
-	// 저장하게 되면 암묵적으로 데이터 손실이 발생합니다.
-	
-	integer = 7.756f;
-	printf("integer 변수의 값 = %d\n", integer);
-
-	// 정수형에서 실수형으로 암묵적 자료형 변환은
-	// 가능하지만, 실수형에서 정수형으로
-	// 암묵적 자료형 변환은 되지 않습니다.
-	*/
-
-	// 명시적 형 변환
-	/*
-	// 연산이 이루어지기 전에 사용자가 직접
-	// 자료형을 변환하는 과정입니다.
-
-	int x = 10;
-	int y = 3;
-
-	// 정수형 변수끼리 연산을 수행하게 되면 정수의 결과 값만
-	// 가질 수 있습니다.
-
-
-	float result = (float)x / y;
-	printf("result의 값 : %f", result);
-	*/
+	// 데이터의 주소 값은 해당 데이터가 저장된
+	// 메모리의 시작 주소를 의미하며, 메모리의
+	// 공간은 1 byte 크기로 나누어 표현합니다.
 
 #pragma endregion
 
-#pragma region continue문
-	/*
-	// 해당 조건문만 실행하지 않고, 반복문은 이어서
-	// 실행하는 제어문입니다.
+#pragma region scanf() 함수
+	// 표준 입력 함수로, 여러 종류의 데이터를 다양한
+	// 서식에 맞추어 입력해주는 함수입니다.
 
-	for (int i = 1; i <= 5; i++)
-	{
-		if (i == 3)	continue;
-		printf("i값: %d\n", i);
-	}*/
-#pragma endregion
+	//int input = 0;
 
-#pragma region 시프트 연산자
-	// 비트값을 주어진 숫자만큼 부호 방향으로
-	// 이동시키는 연산자입니다.
+	// 입력할 데이터의 서식 지정자, 내가 입력할 변수의 주소
 
-	// int a = 3; // 0000 0011
+	// 표준 입력함수로 데이토를 입력하게 되면 버퍼에 
+	// 데이터를 보관하였다가 입력하는 순간 버퍼 안의
+	// 내용을 프로그램에 전송합니다.
+	//scanf_s("%d", &input);
+
+	//printf("input 변수의 값 : %d\n", input);
+
+	// while (1)
+	// {
+	// 	scanf_s("%d", &input);
 	// 
-	// printf("a를 왼쪽 2번 시프트 연산한 결과: %d\n", a <<= 2); // 0000 1100
-	// printf("a의 값: %d\n", a);
-	// printf("a를 오른쪽 3번 시프트 연산한 결과: %d\n", a >> 3); // 0000 0001
+	// 	printf("입력하였습니다...\nn");
+	// }
 
 #pragma endregion
-	 
 
+#pragma region 포인터
+
+	// 메모리의 주소값을 저장할 수 있는 변수입니다.
+
+	int value = 100;
+
+	// 포인터 변수도 자신의 메모리 공간을 가지고 있으며
+	// 포인터 변수에 변수의 주소를 저장하게 되면
+	// 해당 변수의 시작 주소를 가리키게 됩니다.
+
+	int* ptr = &value;
+
+	printf("ptr의 값 : %p\n", ptr);
+	printf("value의 주소 값 : %p\n", &value);
+	printf("ptr 변수의 고유 주소 : %p\n", &ptr);
+
+	*ptr = 9999;
+
+	// 포인터가 가리키는 메모리 공간의 자료형은
+	// 알 수 없으므로 포인터가 가리키는 메모리의
+	// 자료형을 선언해주어야 합니다.
+
+	printf("ptr 변수가 가리키는 값 : %d\n", *ptr);
+	printf("value 변수의 값 : %d\n", value);
+
+#pragma endregion
 
 }
