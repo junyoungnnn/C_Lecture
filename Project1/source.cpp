@@ -1,106 +1,69 @@
 #include <stdio.h>
+#pragma region 재귀 함수
+	// 어떤 함수에서 자신을 다시 호출하여
+	// 작업을 수행하는 함수입니다.
+void Function() {
 
-// 자료형 함수의 이름 (매개변수)
-void Function()
-{
-	// 같은 이름의 함수를 선언할 수 없습니다.
-	printf("Function\n");
+	// 재귀함수는 함수를 계속 호출하기 때문에
+	// 스택영역에 메모리가 계속 쌓이게 되므로
+	// 스택 오버플로우가 발생합니다.
+	printf("함수 호출\n");
+	Function();
 }
-
-// 반환형
-// 함수의 경우 자료형과 반환하는 값의 형태가 일치하지 않으면
-// 원하는 값을 얻을 수 없습니다.
-char CharFunction()
-{
-	return 'A';
-}
-
-#pragma region 매개 변수
-// 함수의 정의에서 전달받은 인수를 함수 내부로
-// 전달하기 위해 사용하는 변수입니다.
-
-void Calculator(int x) 
-{
-	x = 440;
-	printf("x의 값: %d\n", x);
-}
-
-void Swap(int* x, int* y)
-{
-	int temp = *x;
-	*x = *y;
-	*y = temp;
-	printf("a값: %d, b값: %d\n", *x, *y);
-}
-
-// 매개변수는 함수 내부에서만 연산이 이루어지며,
-// 함수가 종료되면 메모리에서 사라지며, 여러개의
-// 매개 변수를 생성할 수 있습니다.
 
 #pragma endregion
 
+// 팩토리얼
+// !5(120) !4(24) !3(6) !2 !1
+
+int Factorial(int num)
+{
+	if (num > 0)
+	{
+		return num * Factorial(num - 1);
+	}
+	else
+		return 1;
+}
+
+
+// CountDown()
+void CountDown(int count)
+{
+	// 방어 코드
+	if (count <= 0)
+	{
+		return;
+	}
+
+	printf("count의 값: %d\n", count);
+	CountDown(count - 1);
+	printf("CountDown(%d)함수 종료\n", count);
+}
 
 int main()
 {
-#pragma region 범용(void) 포인터
-	// // 자료형이 정해지지 않은 상태로 모든
-	// // 자료형을 저장할 수 있는 포인터입니다.
-	// 
-	// 
-	// // int(4 byte)
-	// int data = 100;
-	// 
-	// // float (4byte);
-	// float pi = 3.141592f;
-	// void* ptr = &data;
-	// 
-	// // 범용 포인터는 메모리 주소에 접근해서
-	// // 값을 변경할 수 없습니다.
-	// // *ptr = 10; ERROR
-	// 
-	// *(int*)ptr = 9999;
-	// 
-	// printf("ptr이 가르키는 값 : %d\n", *(int*)ptr);
-	// printf("data의 값: %d\n", data);
-	// 
-	// ptr = &pi;
-	// printf("ptr이 가르키는 값 : %f\n", *(float*)ptr);
-	// printf("data의 값: %f\n", pi);
-#pragma endregion
-#pragma region 함수
-	// 하나의 특별한 목적의 작업을 수행하기 위해
-	// 독립적으로 설계된 코드의 집합입니다.
+	// CountDown(3);
 
-	// 함수 호출
-	// Function();
-	// CharFunction();
+	// printf("%d", Factorial(5));
 
+	int data = 10;
+	int* ptr = &data;
 
-	// printf("%c\n", CharFunction());
-
-
-#pragma endregion
-#pragma region 인수
-	// 함수가 호출될 때 매개변수에 실제로 전달되는 값입니다.
-
-	// int value = 100;
-	// Calculator(value);
+	// 0a 00 00 00
 	// 
-	// printf("value의 값: %d\n", value);
+	// [] [] [] []
+
+	// 빅 엔디안 방식
+	// 네트워크에서는 빅 엔디안 방식으로 통일함.
+
+	// 리틀 엔디안 방식
+	// 뒤부터 읽음
+	// 값이 작으면 조금만 읽으면 되기 때문.
+	// 낮은 주소에 데이터의 낮은 바이트(LSB)부터 저장하는 방법입니다.
 	
-#pragma endregion
 
-	// 값바꾸기
-	int a = 10;
-	int b = 20;
-	int temp;
-
-	temp = a;
-	a = b;
-	b = temp;
-
-	printf("a값: %d, b값: %d\n", a, b);
-
-	Swap(&a,&b);
-
+	// 프로그램이 정상적으로 종료되었을 때
+	// 0이라는 값을 반환합니다.
+	return 0;
 }
