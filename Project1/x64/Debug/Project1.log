@@ -1,3 +1,4 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(514,5): warning MSB8028: 중간 디렉터리(x64\Debug\)에 다른 프로젝트(C_Lecture.vcxproj, Project1.vcxproj)에서 공유하는 파일이 포함되어 있습니다.  이로 인해 잘못된 정리 및 다시 빌드 동작이 수행될 수 있습니다.
-  source.c
+  source.cpp
+C:\Users\노준오\Desktop\C_Lecture\Project1\source.cpp(1,1): warning C4828: 파일에 0x477 오프셋에서 시작하는 문자가 포함되어 있습니다. 이 문자는 현재 원본 문자 집합에서 잘못된 문자입니다(코드 페이지 949).
   Project1.vcxproj -> C:\Users\노준오\Desktop\C_Lecture\x64\Debug\Program.exe
