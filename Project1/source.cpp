@@ -3,71 +3,88 @@
 
 int main()
 {
-#pragma region 이중 포인터
-	// ptr2는 ptr의 시작 주소를 가르키고
-	// ptr은 data의 주소를 가르킨다.
-	// *ptr 은 data의 값을 가르키고
-	// **ptr2는 *ptr이 가르키는 값인 data의 값을 가르킨다.
 
-	// int data = 300;
-	// int* ptr = &data;
-	// int** ptr2 = &ptr;
-	// printf("**ptr2의 값: %d\n", **ptr2);
-	// **ptr2 = 999;
-	// printf("data의 값: %d\n", data);
-	// printf("**ptr2의 값: %d\n", **ptr2);
-
+#pragma region 포인터 배열
+	// 포인터를 담는 배열
 	// int a = 10;
 	// int b = 20;
-	// int* aPtr1 = &b;
-	// int* bPtr1 = &a;
-	// int** aPtr2 = &aPtr1;
-	// int** bPtr2 = &bPtr1;
-	// printf("**aPtr2이 가르키는 값: %d\n", **aPtr2);
-	// printf("**bPtr2이 가르키는 값: %d\n", **bPtr2);
-
-	/*
-	int a = 10;
-	int b = 20;
-
-	int* aPtr1 = &a;
-	int* bPtr1 = &b;
-
-	int** aPtr2 = &aPtr1;
-	int** bPtr2 = &bPtr1;
-
-	printf("**aPtr2이 가르키는 값: %d\n", **aPtr2);
-	printf("**bPtr2이 가르키는 값: %d\n", **bPtr2);
-
-	int* temp = *bPtr2;
-	*bPtr2 = *aPtr2;
-	*aPtr2 = temp;
-
-	printf("**aPtr2이 가르키는 값: %d\n", **aPtr2);
-	printf("**bPtr2이 가르키는 값: %d\n", **bPtr2);
-	*/
-#pragma endregion
-
-#pragma region 나머지 연산자
-
-	// printf("1을 3으로 나눈 나머지 : %d\n", 1 % 3);
-	// printf("2를 3으로 나눈 나머지 : %d\n", 2 % 3);
-	// printf("4를 3으로 나눈 나머지 : %d\n", 4 % 3);
+	// int c = 30;
+	// 
+	// int* arrayPtr[3] = { &a, &b, &c };
+	// 
+	// printf("arrayPtr[1]의 값 : %p\n", arrayPtr[1]);
+	// printf("b의 주소 : %p\n", &b);
+	// printf("b의 값 : %d\n", b);
+	// printf("arrayPtr[1]가 가르키는 값 : %d\n", *arrayPtr[1]);
+	// 
+	// *arrayPtr[1] = 200;
+	// printf("arrayPtr[1]가 가르키는 값 : %d\n", *arrayPtr[1]);
 
 #pragma endregion
+#pragma region 짝수와 홀수
+	//	int n;
+	//	scanf_s("%d", &n);
+	//	
+	//	if (n % 2 == 0)
+	//	{
+	//		printf("%d는 짝수 입니다", n);
+	//	}
+	//	else
+	//		printf("%d는 홀수 입니다", n);
 
-#pragma region 약수
-	
+#pragma endregion
+#pragma region 2차원 배열
+	// 배열의 요소로 또 다른 배열을 가지는 배열입니다.
+
+	// 2차원 배열 또한 연속적인 메모리 공간의 형태로 저징되며,
+	// 2차원 배열의 크기를 생략할 때 배열의 행의 크기만 생략할 수 있습니다.
+	                  
+	// int array2D[3][3] =
+	// {
+	// 	{0,1,2},
+	// 	{3,4,5},
+	// 	{6,7,8},
+	// };
+	// 
+	// //printf("array2D[1][1]의 값 : %d", array2D[1][1]);
+	// 
+	// // 2차원 배열은 행과 열로 구분되며 앞에 있는 배열은
+	// // 열을 의미하고, 뒤에 있는 배열은 행을 의미합니다.
+	// 
+	// for (int i = 0; i < 3; i++)
+	// {
+	// 	for (int j = 0; j < 3; j++)
+	// 	{
+	// 		printf("array2D[%d][%d]의 값 : %d\n", i , j, array2D[i][j]);
+	// 	}
+	// }
+	// 
+	// int(*ptr)[3] = array2D;
+	// 
+	// printf("ptr의 값 : %p\n", ptr);
+	// printf("array2D의 시작 주소 : %p\n", array2D);
+	// 
+	// printf("ptr + 1의 값 : %p\n", ptr + 1);
+	// printf("array2D + 1의 시작 주소 : %p\n", array2D+1);
+
+#pragma endregion
+#pragma region 소인수 분해
+
 	int n;
+	int c = 2;
 	scanf_s("%d", &n);
-	for (int i = 1; i <= n; i++)
-	{
-		if (n % i == 0)
-		{
-			printf("%d ", i);
-		}
-	}
 
+	while (1)
+	{
+		if (n % c == 0)
+		{
+			printf("%d ", c);
+			n /= c;
+		}
+		else 
+			c++;
+		if (n == 1) break;
+	}
 #pragma endregion
 
 
