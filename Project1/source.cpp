@@ -3,91 +3,28 @@
 
 int main()
 {
+	// 메모리의 주소값을 저장할 수 있는 변수입니다.
 
-#pragma region 포인터 배열
-	// 포인터를 담는 배열
-	// int a = 10;
-	// int b = 20;
-	// int c = 30;
-	// 
-	// int* arrayPtr[3] = { &a, &b, &c };
-	// 
-	// printf("arrayPtr[1]의 값 : %p\n", arrayPtr[1]);
-	// printf("b의 주소 : %p\n", &b);
-	// printf("b의 값 : %d\n", b);
-	// printf("arrayPtr[1]가 가르키는 값 : %d\n", *arrayPtr[1]);
-	// 
-	// *arrayPtr[1] = 200;
-	// printf("arrayPtr[1]가 가르키는 값 : %d\n", *arrayPtr[1]);
+	int value = 100;
 
-#pragma endregion
-#pragma region 짝수와 홀수
-	//	int n;
-	//	scanf_s("%d", &n);
-	//	
-	//	if (n % 2 == 0)
-	//	{
-	//		printf("%d는 짝수 입니다", n);
-	//	}
-	//	else
-	//		printf("%d는 홀수 입니다", n);
+	// 포인터 변수도 자신의 메모리 공간을 가지고 있으며
+	// 포인터 변수에 변수의 주소를 저장하게 되면
+	// 해당 변수의 시작 주소를 가리키게 됩니다.
 
-#pragma endregion
-#pragma region 2차원 배열
-	// 배열의 요소로 또 다른 배열을 가지는 배열입니다.
+	int* ptr = &value;
 
-	// 2차원 배열 또한 연속적인 메모리 공간의 형태로 저징되며,
-	// 2차원 배열의 크기를 생략할 때 배열의 행의 크기만 생략할 수 있습니다.
-	                  
-	// int array2D[3][3] =
-	// {
-	// 	{0,1,2},
-	// 	{3,4,5},
-	// 	{6,7,8},
-	// };
-	// 
-	// //printf("array2D[1][1]의 값 : %d", array2D[1][1]);
-	// 
-	// // 2차원 배열은 행과 열로 구분되며 앞에 있는 배열은
-	// // 열을 의미하고, 뒤에 있는 배열은 행을 의미합니다.
-	// 
-	// for (int i = 0; i < 3; i++)
-	// {
-	// 	for (int j = 0; j < 3; j++)
-	// 	{
-	// 		printf("array2D[%d][%d]의 값 : %d\n", i , j, array2D[i][j]);
-	// 	}
-	// }
-	// 
-	// int(*ptr)[3] = array2D;
-	// 
-	// printf("ptr의 값 : %p\n", ptr);
-	// printf("array2D의 시작 주소 : %p\n", array2D);
-	// 
-	// printf("ptr + 1의 값 : %p\n", ptr + 1);
-	// printf("array2D + 1의 시작 주소 : %p\n", array2D+1);
+	printf("ptr의 값 : %p\n", ptr);
+	printf("value의 주소 값 : %p\n", &value);
+	printf("ptr 변수의 고유 주소 : %p\n", &ptr);
 
-#pragma endregion
-#pragma region 소인수 분해
+	*ptr = 9999;
 
-	int n;
-	int c = 2;
-	scanf_s("%d", &n);
+	// 포인터가 가리키는 메모리 공간의 자료형은
+	// 알 수 없으므로 포인터가 가리키는 메모리의
+	// 자료형을 선언해주어야 합니다.
 
-	while (1)
-	{
-		if (n % c == 0)
-		{
-			printf("%d ", c);
-			n /= c;
-		}
-		else 
-			c++;
-		if (n == 1) break;
-	}
-#pragma endregion
+	printf("ptr 변수가 가리키는 값 : %d\n", *ptr);
+	printf("value 변수의 값 : %d\n", value);
 
-
-	return 0;
 }
 

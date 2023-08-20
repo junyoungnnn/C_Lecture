@@ -96,13 +96,13 @@ void main()
 	printf("data에 '+=' 한 결과 : %d\n", data);
 
 	data -= 5;
-	printf("data에 '+=' 한 결과 : %d\n", data);
+	printf("data에 '-=' 한 결과 : %d\n", data);
 
 	data *= 3;
-	printf("data에 '+=' 한 결과 : %d\n", data);
+	printf("data에 '*=' 한 결과 : %d\n", data);
 
 	data /= 5;
-	printf("data에 '+=' 한 결과 : %d\n", data);
+	printf("data에 '/=' 한 결과 : %d\n", data);
 	*/
 
 	// 2중 for문

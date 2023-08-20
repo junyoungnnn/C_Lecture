@@ -148,6 +148,7 @@
     <ClInclude Include="(2023.08.02) 자기 참조 구조체.h" />
     <ClInclude Include="(2023.08.03) ASCII 코드.h" />
     <ClInclude Include="%282023.08.04%29 이중 포인터.h" />
+    <ClInclude Include="(2023.08.07) 포인터 배열.h" />
     <ClInclude Include="ControlSound.h" />
     <ClInclude Include="SoundManager.h" />
   </ItemGroup>

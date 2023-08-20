@@ -15,10 +15,10 @@ int main()
 	// [ ] [ ] [ ] [ ] [ ]
 
 	// 배열의 경우 첫 번째 원소는 0부터 시작합니다.
-	// printf("buffer의 0번 쩨 index는 : %d\n", buffer[0]);
-	// printf("buffer의 0번 쩨 index는 : %d\n", buffer[1]);
+	// printf("buffer의 0번 째 index : %d\n", buffer[0]);
+	// printf("buffer의 0번 째 index : %d\n", buffer[1]);
 
-	// 베열의 크기는 생략할 수 있으며, 초기화 목록에서 설정한
+	// 배열의 크기는 생략할 수 있으며, 초기화 목록에서 설정한
 	// 요소에 따라 배열의 크기가 결정됩니다.
 	float dataList[] = { 1.11f, 2.22f, 3.33f };
 

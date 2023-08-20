@@ -36,7 +36,7 @@ int main()
 	// {
 	// 	scanf_s("%d", &input);
 	// 
-	// 	printf("입력하였습니다...\nn");
+	// 	printf("입력하였습니다...\n");
 	// }
 
 #pragma endregion
